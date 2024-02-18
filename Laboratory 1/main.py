@@ -1,5 +1,4 @@
 from grammar import Grammar
-from graph_view import visualize_finite_automaton
 grammar = Grammar()
 def print_generated_strings(grammar):
     strings = grammar.generate_strings()
@@ -21,5 +20,3 @@ def print_test(arr):
             print(f"{i} (doens't)")
 arr = ["dd", "dabca", "bbca", "dabcd", "dddd"]
 print_test(arr)
-
-visualize_finite_automaton(fa)
