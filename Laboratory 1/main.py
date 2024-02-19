@@ -1,22 +1,23 @@
-from grammar import Grammar
-grammar = Grammar()
-def print_generated_strings(grammar):
-    strings = grammar.generate_strings()
-    for s in strings:
-        print(s)
+from grammar import ContextFreeGrammar
 
-print("Generated strings:")
-print_generated_strings(grammar)
+cfg = ContextFreeGrammar()
 
-fa = grammar.to_finite_automaton()
-print(fa)
+def display_generated(cfg):
+    results = cfg.create_strings()
+    print("Generated strings:")
+    for result in results:
+        print(result)
 
-def print_test(arr):
+display_generated(cfg)
+
+automaton = cfg.grammar_to_automaton(cfg)
+print(automaton)
+
+def validate_strings(strings):
     print("String Validation:")
-    for i in arr:
-        if fa.accepts(i):
-            print(f"{i} (belongs to the language)")
-        else:
-            print(f"{i} (doens't)")
-arr = ["dd", "dabca", "bbca", "dabcd", "dddd"]
-print_test(arr)
+    for string in strings:
+        validation = "belongs to the language" if automaton.is_accepted(string) else "doesn't belong to the language"
+        print(f"{string} ({validation})")
+
+test_strings = ["dd", "dabca", "bbca", "dabcd", "dddd"]
+validate_strings(test_strings)
