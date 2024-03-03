@@ -63,6 +63,24 @@ F = {q3}
 δ(q2, c) = q3
 δ(q3, c) = q3
 
+## Here's the implementation in Python
+
+```python
+class FiniteAutomaton:
+    def __init__(self):
+        self.Q = ['q0', 'q1', 'q2', 'q3']
+        self.Sigma = ['a', 'b', 'c']
+        self.Delta = {
+            ('q0', 'a'): ['q0', 'q1'],
+            ('q1', 'b'): ['q2'],
+            ('q2', 'c'): ['q3'],
+            ('q3', 'c'): ['q3'],
+            ('q2', 'a'): ['q2']
+        }
+        self.q0 = 'q0'
+        self.F = ['q3']
+```
+
 ### FiniteAutomaton Class
 
 The `SimpleFiniteAutomaton` class represents a finite automaton (FA), which is a simple machine used to recognize patterns within input taken from some character set (or alphabet).
