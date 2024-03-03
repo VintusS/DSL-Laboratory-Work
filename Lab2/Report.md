@@ -99,6 +99,7 @@ class FiniteAutomaton:
             P.append((final_state, '', 'e'))
         return Grammar(S, Vn, Vt, P)
 ```
+
 Subsequently, I implemented a function named `convert_to_grammar` within the class that transforms a finite automaton into its equivalent grammar representation. This grammar consists of a start symbol 'S', a set of non-terminal symbols 'Vn', a set of terminal symbols 'VT', and a set of production rules 'P'. The conversion process utilizes a nested iteration mechanism that cycles through each state in the set 'Q' and each symbol within the alphabet '∑'. During the iteration, the function examines whether a transition exists for a given state-symbol combination based on the Delta function. If such a transition is present, the function ascertains the subsequent state corresponding to the state-symbol pair and constructs the appropriate production rule. Furthermore, the function scrutinizes the final states, appending an epsilon-transition to the grammar for each one, thus enabling a transition to an empty string. This method systematically aligns the state transitions of the finite automaton with the production rules of a grammar, thereby encapsulating the finite automaton's behavior within the descriptive power of grammatical structures.
 
 ```python
@@ -142,6 +143,7 @@ def nfa_to_dfa(self):
         print(f"q0 = {initial_state}")
         print(f"F = {final_states}")
 ```
+
 This particular function is tasked with transforming a non-deterministic finite automaton (NFA) into its deterministic counterpart (DFA). It employs a while loop to sequentially process each state. The loop examines whether a state has been addressed previously; if not, it creates a new entry for that state within the transition dictionary. For every combination of state and input symbol, the function calculates the resultant state set by iterating over the state entries in the NFA's transition function. This method systematically explores the NFA's states and transitions to formulate an equivalent DFA.
 
 ```python
@@ -180,6 +182,8 @@ finite_automaton.nfa_to_dfa()
 
 ## Outputs
 
+### Grammar:
+
 ```bash
 Grammar:
 VN = { q0, q1, q2, q3 }
@@ -194,6 +198,27 @@ P = {
     q3 -> e
 }
 ```
+
+### Check if NFA or DFA
+
+```bash
+NFA
+```
+
+### Converting
+
+```bash
+Deterministic Finite Automaton:
+Q = ['q0', 'q0,q1', 'q2', 'q3']
+Sigma = ['a', 'b', 'c']
+Delta = {'q0': {'a': 'q0,q1', 'b': '', 'c': ''}, 'q0,q1': {'a': 'q0,q1', 'b': 'q2', 'c': ''}, 'q2': {'a': 'q2', 'b': '', 'c': 'q3'}, 'q3': {'a': '', 'b': '', 'c': 'q3'}}
+q0 = q0
+F = ['q3']
+```
+
+## Conclusions
+
+In conclusion, this laboratory session facilitated an in-depth understanding of finite automatons by guiding us through the process of converting non-deterministic finite automatons (NFAs) into deterministic finite automatons (DFAs). The hands-on experience with the 'convert_to_grammar' and 'show_grammar' methods bridged the conceptual gap between abstract automaton theory and practical application. The lab also emphasized the significance of verifying determinism in automatons, culminating in a comprehensive exercise that solidified our foundational knowledge in computational theory and programming.
 
 ## References
 1. COJUHARI Irina, Duca Ludmila, Fiodorv Ion. "Formal Languages and Finite Automata: Guide for practical lessons". Technical University of Moldova
