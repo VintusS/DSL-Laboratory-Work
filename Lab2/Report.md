@@ -38,8 +38,6 @@
 
 ##  Implementation
 
-### Grammar Class
-
 # Finite Automaton Variant 20
 
 ## States (Q)
