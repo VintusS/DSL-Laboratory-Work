@@ -7,11 +7,12 @@
 ----
 ## Theory:
 
-A finite automaton is a mechanism used to represent processes of different kinds. It can be compared to a state machine as they both have similar structures and purpose as well. The word finite signifies the fact that an automaton comes with a starting and a set of final states. In other words, for process modeled by an automaton has a beginning and an ending.
+&ensp;&ensp;&ensp; A finite automaton is a mechanism used to represent processes of different kinds. It can be compared to a state machine as they both have similar structures and purpose as well. The word finite signifies the fact that an automaton comes with a starting and a set of final states. In other words, for process modeled by an automaton has a beginning and an ending.
 
-    Based on the structure of an automaton, there are cases in which with one transition multiple states can be reached which causes non determinism to appear. In general, when talking about systems theory the word determinism characterizes how predictable a system is. If there are random variables involved, the system becomes stochastic or non deterministic.
+&ensp;&ensp;&ensp; Based on the structure of an automaton, there are cases in which with one transition multiple states can be reached which causes non determinism to appear. In general, when talking about systems theory the word determinism characterizes how predictable a system is. If there are random variables involved, the system becomes stochastic or non deterministic.
 
-    That being said, the automata can be classified as non-/deterministic, and there is in fact a possibility to reach determinism by following algorithms which modify the structure of the automaton.
+&ensp;&ensp;&ensp; That being said, the automata can be classified as non-/deterministic, and there is in fact a possibility to reach determinism by following algorithms which modify the structure of the automaton.
+
 ##  Objectives:
 
 1. Understand what an automaton is and what it can be used for.
@@ -39,23 +40,28 @@ A finite automaton is a mechanism used to represent processes of different kinds
 
 ### Grammar Class
 
-The `ContextFreeGrammar` class represents a context-free grammar (CFG), which is a set of recursive rewriting rules used to generate patterns of strings. A CFG consists of a set of non-terminal symbols, terminal symbols, a start symbol, and production rules.
+# Finite Automaton Variant 20
 
-```python
-class ContextFreeGrammar:
-    def __init__(self):
-        self.symbols_nonterminal = {'S', 'A', 'B', 'C'}
-        self.symbols_terminal = {'a', 'b', 'c', 'd'}
-        self.rules = {
-            'S': ['dA'],
-            'A': ['d', 'aB'],
-            'B': ['bC'],
-            'C': ['cA', 'aS']
-        }
-        self.symbol_start = 'S'
-```
+## States (Q)
 
-In the above code snippet, the `ContextFreeGrammar` class is initialized with non-terminals `S`, `A`, `B`, `C`, terminals `a`, `b`, `c`, `d`, and production rules that define how non-terminals can be transformed into strings of non-terminals and terminals.
+Q = {q0, q1, q2, q3}
+
+## Alphabet (∑)
+
+∑ = {a, b, c}
+
+## Accepting States (F)
+
+F = {q3}
+
+## Transition Function (δ)
+
+δ(q0, a) = q0
+δ(q0, a) = q1
+δ(q2, a) = q2
+δ(q1, b) = q2
+δ(q2, c) = q3
+δ(q3, c) = q3
 
 ### FiniteAutomaton Class
 
