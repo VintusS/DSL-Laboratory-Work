@@ -1,7 +1,7 @@
 import random
-from finite_automaton import SimpleFiniteAutomaton
+from finite_automaton import FiniteAutomaton
 
-class ContextFreeGrammar:
+class Grammar:
     def __init__(self):
         self.symbols_nonterminal = {'S', 'A', 'B', 'C'}
         self.symbols_terminal = {'a', 'b', 'c', 'd'}
@@ -45,4 +45,4 @@ class ContextFreeGrammar:
                     state_transitions.setdefault((symbol, terminal), set()).add(next_symbol)
 
         initial_state = cf_grammar.symbol_start
-        return SimpleFiniteAutomaton(state_set, symbols, state_transitions, initial_state, state_final)
+        return FiniteAutomaton(state_set, symbols, state_transitions, initial_state, state_final)

@@ -1,6 +1,6 @@
-from grammar import ContextFreeGrammar
+from grammar import Grammar
 
-cfg = ContextFreeGrammar()
+cfg = Grammar()
 
 def display_generated(cfg):
     results = cfg.create_strings()

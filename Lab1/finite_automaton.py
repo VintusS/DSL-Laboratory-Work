@@ -1,4 +1,4 @@
-class SimpleFiniteAutomaton:
+class FiniteAutomaton:
     def __init__(self, states, alphabet, transitions, start, ends):
         self.state_list = states
         self.symbol_list = alphabet

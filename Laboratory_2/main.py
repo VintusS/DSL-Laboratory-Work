@@ -1,6 +1,6 @@
-from Laboratory_1.grammar import ContextFreeGrammar
+from Lab1.grammar import Grammar
 
-class ExtendedGrammar(ContextFreeGrammar):
+class ExtendedGrammar(Grammar):
     def __init__(self, VN, VT, P):
         super().__init__(VN, VT, P)
         self.types = ['Type 0', 'Type 1', 'Type 2', 'Type 3']
@@ -17,11 +17,12 @@ class ExtendedGrammar(ContextFreeGrammar):
         return True
 
 def main():
-    VN = {'S', 'B', 'C'}
-    VT = {'a', 'b', 'c'}
+    VN = {'S', 'A', 'B', 'C'}
+    VT = {'a', 'b', 'c', 'd'}
     P = {
-        'S': ['aB'],
-        'B': ['aC', 'bB'],
-        'C': ['bB', 'c', 'aS']
+        'S': ['dA'],
+            'A': ['d', 'aB'],
+            'B': ['bC'],
+            'C': ['cA', 'aS']
     }
-    grammar = ContextFreeGrammar(VN, VT, P)
+    grammar = Grammar(VN, VT, P)
