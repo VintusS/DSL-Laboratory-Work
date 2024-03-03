@@ -81,6 +81,26 @@ class FiniteAutomaton:
         self.F = ['q3']
 ```
 
+####This class defines represents the Finite Automaton
+
+```python
+ def convert_to_grammar(self):
+        S = self.q0
+        Vn = self.Q
+        Vt = self.Sigma
+        P = []
+        for state in self.Q:
+            for symbol in self.Sigma:
+                if (state, symbol) in self.Delta:
+                    next_states = self.Delta[(state, symbol)]
+                    for next_state in next_states:
+                        P.append((state, symbol, next_state))
+        for final_state in self.F:
+            P.append((final_state, '', 'e'))
+        return Grammar(S, Vn, Vt, P)
+```
+Subsequently, I implemented a function named `convert_to_grammar` within the class that transforms a finite automaton into its equivalent grammar representation. This grammar consists of a start symbol 'S', a set of non-terminal symbols 'Vn', a set of terminal symbols 'VT', and a set of production rules 'P'. The conversion process utilizes a nested iteration mechanism that cycles through each state in the set 'Q' and each symbol within the alphabet '∑'. During the iteration, the function examines whether a transition exists for a given state-symbol combination based on the Delta function. If such a transition is present, the function ascertains the subsequent state corresponding to the state-symbol pair and constructs the appropriate production rule. Furthermore, the function scrutinizes the final states, appending an epsilon-transition to the grammar for each one, thus enabling a transition to an empty string. This method systematically aligns the state transitions of the finite automaton with the production rules of a grammar, thereby encapsulating the finite automaton's behavior within the descriptive power of grammatical structures.
+
 ### FiniteAutomaton Class
 
 The `SimpleFiniteAutomaton` class represents a finite automaton (FA), which is a simple machine used to recognize patterns within input taken from some character set (or alphabet).
