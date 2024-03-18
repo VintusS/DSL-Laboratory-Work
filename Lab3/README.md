@@ -31,8 +31,27 @@ The lexer is implemented in Swift, providing a concise and effective demonstrati
 To use the lexer, initialize it with a string, and then call the `tokenize` method to produce a stream of tokens.
 
 ```swift
-let lexer = Lexer(input: "let someVariable = 12 + 34")
-let tokens = lexer.tokenize()
+print("Enter your code line:", terminator: " ")
+if let code = readLine() {
+    let lexer = Lexer(input: code)
+    let tokens = lexer.tokenize()
+}
+```
+
+This is the output for the following input `let someVariable = 12 + 34`:
+
+```bash
+identifier: 'let'
+whitespace: ' '
+identifier: 'someVariable'
+whitespace: ' '
+operatorSymbol: '='
+whitespace: ' '
+number: '12'
+whitespace: ' '
+operatorSymbol: '+'
+whitespace: ' '
+number: '34'
 ```
 
 ## Conclusion
