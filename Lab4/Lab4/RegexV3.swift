@@ -57,7 +57,7 @@ func processRegex(_ regex: String) -> [String] {
     return result
 }
 
-func StringGenerationsV3() {
+func RegexV3() {
     // Example usage
     let inputRegex = "(S|T)^*N?^+"
     let output = processRegex(inputRegex)

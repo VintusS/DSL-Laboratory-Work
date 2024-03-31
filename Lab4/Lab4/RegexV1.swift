@@ -8,7 +8,7 @@
 import Foundation
 
 // This version of implementation is the basic one without any sequence of processing the regular expression
-func StringGenerationsV1() {
+func RegexV1() {
     // MARK: -VARIABLES
     var str1 = String()
     var str2 = String()

@@ -8,6 +8,6 @@
 import Foundation
 
 // Variant 4
-//StringGenerationsV1()
-StringGenerationsV2()
-//StringGenerationsV3()
+//RegexV1()
+//RegexV2()
+RegexV3()

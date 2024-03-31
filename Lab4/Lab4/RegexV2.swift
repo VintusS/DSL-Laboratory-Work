@@ -8,7 +8,7 @@
 import Foundation
 
 // This version of implementation is for the BONUS POINT (added the sequence of processing)
-func StringGenerationsV2() {
+func RegexV2() {
     
     func randFirstStr() {
         var finalString: String
