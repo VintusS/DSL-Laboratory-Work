@@ -37,5 +37,9 @@ func random_Concatenating_V1(symbol: Character, count: Int) -> String {
 }
 
 // MARK: -(^+) CONCATENATING
+func random_Concatenating_V2(symbol: Character, count: Int) -> String {
+    var response = "Concatenating \"\(symbol)\" \(count) times: "
+    return response
+}
 
 // MARK: -REGULAR CONCATENATION
