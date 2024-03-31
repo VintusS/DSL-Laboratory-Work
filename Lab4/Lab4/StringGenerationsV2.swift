@@ -18,8 +18,24 @@ func StringGenerationsV2() {
         let d = Int.random(in: 1..<6)
         
         // MARK: -GENERATING FIRST STRING YO
-        finalString = a.randomElement()! + b.randomElement()! + concatenateSymbols(symbol: "W", count: c) + concatenateSymbols(symbol: "Y", count: d) + "24"
-        print(randomSymbol(choices: a))
+        finalString = a.randomElement()!
+        print(randomSymbol(choices: a), terminator: "-> ")
+        print(finalString)
+        finalString += b.randomElement()!
+        print(randomSymbol(choices: b), terminator: "-> ")
+        print(finalString)
+        finalString += concatenateSymbols(symbol: "W", count: c)
+        print(random_Concatenation_V1(symbol: "W", count: c), terminator: "-> ")
+        print(finalString)
+        finalString += concatenateSymbols(symbol: "Y", count: d)
+        print(random_Concatenation_V2(symbol: "Y", count: d), terminator: "-> ")
+        print(finalString)
+        finalString += "24"
+        print(regularSimpleConcatenation(string: "24"), terminator: "-> ")
+        print(finalString)
+        breakLine()
+        finalResult(result: finalString)
+        print()
     }
     
     func randSecondStr() {
@@ -29,7 +45,27 @@ func StringGenerationsV2() {
         let c = ["2", "3"]
         
         // MARK: -GENERATING SECOND STRING LO
-        finalString = "L" + a.randomElement()! + "OOO" + concatenateSymbols(symbol: "P", count: b) + "Q" + c.randomElement()!
+        finalString = "L"
+        print(regularSimpleConcatenation(string: "L"), terminator: "-> ")
+        print(finalString)
+        finalString += a.randomElement()!
+        print(randomSymbol(choices: a), terminator: "-> ")
+        print(finalString)
+        finalString += concatenateSymbols(symbol: "O", count: 3)
+        print(regularMultipleConcatenation(string: "O", count: 3), terminator: "-> ")
+        print(finalString)
+        finalString += concatenateSymbols(symbol: "P", count: b)
+        print(random_Concatenation_V1(symbol: "P", count: b), terminator: "-> ")
+        print(finalString)
+        finalString += "Q"
+        print(regularSimpleConcatenation(string: "Q"), terminator: "-> ")
+        print(finalString)
+        finalString += c.randomElement()!
+        print(randomSymbol(choices: c), terminator: "-> ")
+        print(finalString)
+        breakLine()
+        finalResult(result: finalString)
+        print()
         
     }
     
@@ -40,9 +76,28 @@ func StringGenerationsV2() {
         let c = ["X", "Y", "Z"]
         
         // MARK: GENERATING THIRD STRING SO
-        finalString = concatenateSymbols(symbol: "R", count: a) + "S" + b.randomElement()! + "W" + concatenateSymbols(symbol: Character(c.randomElement()!), count: 2)
+        finalString = concatenateSymbols(symbol: "R", count: a)
+        print(random_Concatenation_V1(symbol: "R", count: a), terminator: "-> ")
+        print(finalString)
+        finalString += "S"
+        print(regularSimpleConcatenation(string: "S"), terminator: "-> ")
+        print(finalString)
+        finalString += b.randomElement()!
+        print(randomSymbol(choices: b), terminator: "-> ")
+        print(finalString)
+        finalString += "W"
+        print(regularSimpleConcatenation(string: "W"), terminator: "-> ")
+        print(finalString)
+        finalString += concatenateSymbols(symbol: Character(c.randomElement()!), count: 2)
+        print(regularMultipleConcatenation(string: String(c.randomElement()!), count: 2), terminator: "-> ")
+        print(finalString)
+        breakLine()
+        finalResult(result: finalString)
+        print()
         
     }
     
     randFirstStr()
+    randSecondStr()
+    randThirdStr()
 }

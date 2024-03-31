@@ -32,25 +32,25 @@ func randomSymbol(choices: [String]) -> String {
 
 // MARK: -REGULAR SIMPLE CONCATENATION
 func regularSimpleConcatenation(string: String) -> String {
-    var response = "Concatenating \"\(string)\": "
+    let response = "Concatenating \"\(string)\": "
     return response
 }
 
 // MARK: -REGULAR MULTIPLE CONCATENATION
 func regularMultipleConcatenation(string: String, count: Int) -> String {
-    var response = "Concatenating \"\(string)\" \(count) times: "
+    let response = "Concatenating \"\(string)\" \(count) times: "
     return response
 }
 
 // MARK: -(^*) CONCATENATING
 func random_Concatenation_V1(symbol: Character, count: Int) -> String {
-    var response = "Concatenating \"\(symbol)\" \(count) times: "
+    let response = "Concatenating \"\(symbol)\" \(count) times: "
     return response
 }
 
 // MARK: -(^+) CONCATENATING
 func random_Concatenation_V2(symbol: Character, count: Int) -> String {
-    var response = "Concatenating \"\(symbol)\" \(count) times: "
+    let response = "Concatenating \"\(symbol)\" \(count) times: "
     return response
 }
 
