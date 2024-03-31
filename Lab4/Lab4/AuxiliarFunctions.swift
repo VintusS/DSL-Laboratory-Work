@@ -31,15 +31,23 @@ func randomSymbol(choices: [String]) -> String {
 }
 
 // MARK: -(^*) CONCATENATING
-func random_Concatenating_V1(symbol: Character, count: Int) -> String {
+func random_Concatenation_V1(symbol: Character, count: Int) -> String {
     var response = "Concatenating \"\(symbol)\" \(count) times: "
     return response
 }
 
 // MARK: -(^+) CONCATENATING
-func random_Concatenating_V2(symbol: Character, count: Int) -> String {
+func random_Concatenation_V2(symbol: Character, count: Int) -> String {
     var response = "Concatenating \"\(symbol)\" \(count) times: "
     return response
 }
 
 // MARK: -REGULAR CONCATENATION
+func regularConcatenation(string: String) -> String {
+    var response = "Concatenating \"\(string)\": "
+    return response
+}
+
+func breakLine() {
+    print("------------------------------------------")
+}
