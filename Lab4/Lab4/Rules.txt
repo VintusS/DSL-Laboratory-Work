@@ -1,4 +1,4 @@
- Rules for
+ Rules for generated strings
 
  (S|T) -> or
  O^n -> strictly n occurences
