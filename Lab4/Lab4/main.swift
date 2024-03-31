@@ -9,4 +9,4 @@ import Foundation
 
 // Variant 4
 
-
+StringGenerations()
