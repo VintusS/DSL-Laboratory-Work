@@ -103,13 +103,13 @@ func randThirdStr() -> String {
 ### Calling the Functions
 
 ``` swift
-    str1 = randFirstStr()
-    str2 = randSecondStr()
-    str3 = randThirdStr()
-    
-    print("First string: " + str1)
-    print("Second string: " + str2)
-    print("Third string: " + str3)
+str1 = randFirstStr()
+str2 = randSecondStr()
+str3 = randThirdStr()
+
+print("First string: " + str1)
+print("Second string: " + str2)
+print("Third string: " + str3)
 ```
 
 ### Output examples:
@@ -117,22 +117,189 @@ func randThirdStr() -> String {
 #### Example 1:
 
 ``` bash
-    First string: TVWWWWWYY24
-    Second string: LNOOOPPPQ2
-    Third string: RRSUWXX
+First string: TVWWWWWYY24
+Second string: LNOOOPPPQ2
+Third string: RRSUWXX
 ```
 
 #### Example 2: 
 
 ``` bash
-    First string: SUWWWWWYY24
-    Second string: LNOOOPPPQ2
-    Third string: RRRSTWZZ
+First string: SUWWWWWYY24
+Second string: LNOOOPPPQ2
+Third string: RRRSTWZZ
+```
+
+## Version 2: Enhanced String Generation with Processing Sequence
+
+The second version, StringGenerationsV2.swift, enhances the string generation process by adding a sequence of processing steps for each string. The auxiliar functions are situated in AuxiliarFunctions.swift. Here are the modified functions and their code snippets:
+
+### First String
+
+``` swift
+func randFirstStr() {
+    var finalString: String
+    let a = ["S", "T"]
+    let b = ["U", "V"]
+    let c = Int.random(in: 0..<6)
+    let d = Int.random(in: 1..<6)
+    
+    finalString = a.randomElement()!
+    print(randomSymbol(choices: a), terminator: "-> ")
+    print(finalString)
+    finalString += b.randomElement()!
+    print(randomSymbol(choices: b), terminator: "-> ")
+    print(finalString)
+    finalString += concatenateSymbols(symbol: "W", count: c)
+    print(random_Concatenation_V1(symbol: "W", count: c), terminator: "-> ")
+    print(finalString)
+    finalString += concatenateSymbols(symbol: "Y", count: d)
+    print(random_Concatenation_V2(symbol: "Y", count: d), terminator: "-> ")
+    print(finalString)
+    finalString += "24"
+    print(regularSimpleConcatenation(string: "24"), terminator: "-> ")
+    print(finalString)
+    breakLine()
+    finalResult(result: finalString)
+    print()
+}
+```
+
+### Second String
+
+``` swift
+func randSecondStr() {
+    var finalString: String
+    let a = ["M", "N"]
+    let b = Int.random(in: 0..<6)
+    let c = ["2", "3"]
+    
+    finalString = "L"
+    print(regularSimpleConcatenation(string: "L"), terminator: "-> ")
+    print(finalString)
+    finalString += a.randomElement()!
+    print(randomSymbol(choices: a), terminator: "-> ")
+    print(finalString)
+    finalString += concatenateSymbols(symbol: "O", count: 3)
+    print(regularMultipleConcatenation(string: "O", count: 3), terminator: "-> ")
+    print(finalString)
+    finalString += concatenateSymbols(symbol: "P", count: b)
+    print(random_Concatenation_V1(symbol: "P", count: b), terminator: "-> ")
+    print(finalString)
+    finalString += "Q"
+    print(regularSimpleConcatenation(string: "Q"), terminator: "-> ")
+    print(finalString)
+    finalString += c.randomElement()!
+    print(randomSymbol(choices: c), terminator: "-> ")
+    print(finalString)
+    breakLine()
+    finalResult(result: finalString)
+    print()
+    
+}
+```
+
+### Third String
+
+``` swift
+func randThirdStr() {
+    var finalString: String
+    let a = Int.random(in: 0..<6)
+    let b = ["T", "U", "V"]
+    let c = ["X", "Y", "Z"]
+    
+    finalString = concatenateSymbols(symbol: "R", count: a)
+    print(random_Concatenation_V1(symbol: "R", count: a), terminator: "-> ")
+    print(finalString)
+    finalString += "S"
+    print(regularSimpleConcatenation(string: "S"), terminator: "-> ")
+    print(finalString)
+    finalString += b.randomElement()!
+    print(randomSymbol(choices: b), terminator: "-> ")
+    print(finalString)
+    finalString += "W"
+    print(regularSimpleConcatenation(string: "W"), terminator: "-> ")
+    print(finalString)
+    finalString += concatenateSymbols(symbol: Character(c.randomElement()!), count: 2)
+    print(regularMultipleConcatenation(string: String(c.randomElement()!), count: 2), terminator: "-> ")
+    print(finalString)
+    breakLine()
+    finalResult(result: finalString)
+    print()
+}
+```
+
+### Calling the Functions
+
+``` swift
+randFirstStr()
+randSecondStr()
+randThirdStr()
+```
+
+### Output examples:
+
+#### Example 1:
+
+``` bash
+Concatenating one random symbol from the following choices ["S", "T"]: -> T
+Concatenating one random symbol from the following choices ["U", "V"]: -> TU
+Concatenating "W" 3 times: -> TUWWW
+Concatenating "Y" 1 times: -> TUWWWY
+Concatenating "24": -> TUWWWY24
+------------------------------------------
+Final Result: TUWWWY24
+
+Concatenating "L": -> L
+Concatenating one random symbol from the following choices ["M", "N"]: -> LM
+Concatenating "O" 3 times: -> LMOOO
+Concatenating "P" 2 times: -> LMOOOPP
+Concatenating "Q": -> LMOOOPPQ
+Concatenating one random symbol from the following choices ["2", "3"]: -> LMOOOPPQ2
+------------------------------------------
+Final Result: LMOOOPPQ2
+
+Concatenating "R" 0 times: -> 
+Concatenating "S": -> S
+Concatenating one random symbol from the following choices ["T", "U", "V"]: -> SU
+Concatenating "W": -> SUW
+Concatenating "Y" 2 times: -> SUWXX
+------------------------------------------
+Final Result: SUWXX
+```
+
+#### Example 2: 
+
+``` bash
+Concatenating one random symbol from the following choices ["S", "T"]: -> S
+Concatenating one random symbol from the following choices ["U", "V"]: -> SV
+Concatenating "W" 2 times: -> SVWW
+Concatenating "Y" 3 times: -> SVWWYYY
+Concatenating "24": -> SVWWYYY24
+------------------------------------------
+Final Result: SVWWYYY24
+
+Concatenating "L": -> L
+Concatenating one random symbol from the following choices ["M", "N"]: -> LM
+Concatenating "O" 3 times: -> LMOOO
+Concatenating "P" 0 times: -> LMOOO
+Concatenating "Q": -> LMOOOQ
+Concatenating one random symbol from the following choices ["2", "3"]: -> LMOOOQ3
+------------------------------------------
+Final Result: LMOOOQ3
+
+Concatenating "R" 4 times: -> RRRR
+Concatenating "S": -> RRRRS
+Concatenating one random symbol from the following choices ["T", "U", "V"]: -> RRRRSV
+Concatenating "W": -> RRRRSVW
+Concatenating "X" 2 times: -> RRRRSVWZZ
+------------------------------------------
+Final Result: RRRRSVWZZ
 ```
 
 ## Conclusion
 
-concl
+This report presented two versions of string generation implementations in Swift: a basic version without a specific processing sequence and an enhanced version with a structured processing sequence. The basic version offered simplicity in generating strings based on predefined rules, while the enhanced version provided a more systematic approach with clear processing steps. Both versions highlight Swift's versatility in handling string generation tasks, allowing developers to choose the appropriate approach based on their needs and requirements.
 
 
 ## References
