@@ -1,0 +1,14 @@
+//
+//  Rules.swift
+//  Lab4
+//
+//  Created by Dragomir Mindrescu on 31.03.2024.
+//
+
+import Foundation
+
+// (S|T) -> or
+// O^n -> strictly n symbols
+// A^* -> 
+// B^+ -> >= 1 symbols
+// N? -> 0 or 1 symbols
