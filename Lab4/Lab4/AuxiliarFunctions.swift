@@ -17,8 +17,9 @@ func concatenateSymbols(symbol: Character, count: Int) -> String {
 }
 
 // MARK: -PRINTING FUNCTIONS FOR STR_GEN_V2
+
 // MARK: -RANDOM SYMBOL
-func RandomSymbol(choices: [String]) -> String {
+func randomSymbol(choices: [String]) -> String {
     var response = "Concatenating one random symbol from the following choices ["
     for choice in choices {
         response += "\"" + choice + "\", "
@@ -28,3 +29,13 @@ func RandomSymbol(choices: [String]) -> String {
     
     return response
 }
+
+// MARK: -(^*) CONCATENATING
+func random_Concatenating_V1(symbol: Character, count: Int) -> String {
+    var response = "Concatenating \"\(symbol)\" \(count) times: "
+    return response
+}
+
+// MARK: -(^+) CONCATENATING
+
+// MARK: -REGULAR CONCATENATION

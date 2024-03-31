@@ -19,7 +19,7 @@ func StringGenerationsV2() {
         
         // MARK: -GENERATING FIRST STRING YO
         finalString = a.randomElement()! + b.randomElement()! + concatenateSymbols(symbol: "W", count: c) + concatenateSymbols(symbol: "Y", count: d) + "24"
-        print(RandomSymbol(choices: a))
+        print(randomSymbol(choices: a))
     }
     
     func randSecondStr() {
