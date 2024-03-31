@@ -30,6 +30,18 @@ func randomSymbol(choices: [String]) -> String {
     return response
 }
 
+// MARK: -REGULAR SIMPLE CONCATENATION
+func regularSimpleConcatenation(string: String) -> String {
+    var response = "Concatenating \"\(string)\": "
+    return response
+}
+
+// MARK: -REGULAR MULTIPLE CONCATENATION
+func regularMultipleConcatenation(string: String, count: Int) -> String {
+    var response = "Concatenating \"\(string)\" \(count) times: "
+    return response
+}
+
 // MARK: -(^*) CONCATENATING
 func random_Concatenation_V1(symbol: Character, count: Int) -> String {
     var response = "Concatenating \"\(symbol)\" \(count) times: "
@@ -42,12 +54,12 @@ func random_Concatenation_V2(symbol: Character, count: Int) -> String {
     return response
 }
 
-// MARK: -REGULAR CONCATENATION
-func regularConcatenation(string: String) -> String {
-    var response = "Concatenating \"\(string)\": "
-    return response
-}
-
+// MARK: -OUTPUT BREAKLINE
 func breakLine() {
     print("------------------------------------------")
+}
+
+// MARK: -FINAL RESULT OUTPUT
+func finalResult(result: String) {
+    print("Final Result: \(result)")
 }
