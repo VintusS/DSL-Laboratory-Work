@@ -8,5 +8,6 @@
 import Foundation
 
 // Variant 4
-
-StringGenerationsV2()
+//StringGenerationsV1()
+//StringGenerationsV2()
+StringGenerationsV3()

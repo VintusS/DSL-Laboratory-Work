@@ -11,6 +11,7 @@
 		71E4143C2BB9EF0000408B61 /* StringGenerationsV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4143B2BB9EF0000408B61 /* StringGenerationsV1.swift */; };
 		71E4143E2BB9F70400408B61 /* StringGenerationsV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4143D2BB9F70400408B61 /* StringGenerationsV2.swift */; };
 		71E414402BB9F98200408B61 /* AuxiliarFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E4143F2BB9F98200408B61 /* AuxiliarFunctions.swift */; };
+		71E414422BBA08EB00408B61 /* StringGenerationsV3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E414412BBA08EB00408B61 /* StringGenerationsV3.swift */; };
 		71FA28A32BB8B79C002E69D5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FA28A22BB8B79C002E69D5 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		71E4143B2BB9EF0000408B61 /* StringGenerationsV1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringGenerationsV1.swift; sourceTree = "<group>"; };
 		71E4143D2BB9F70400408B61 /* StringGenerationsV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringGenerationsV2.swift; sourceTree = "<group>"; };
 		71E4143F2BB9F98200408B61 /* AuxiliarFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuxiliarFunctions.swift; sourceTree = "<group>"; };
+		71E414412BBA08EB00408B61 /* StringGenerationsV3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringGenerationsV3.swift; sourceTree = "<group>"; };
 		71FA289F2BB8B79C002E69D5 /* Lab4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lab4; sourceTree = BUILT_PRODUCTS_DIR; };
 		71FA28A22BB8B79C002E69D5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,6 +70,7 @@
 				71FA28A22BB8B79C002E69D5 /* main.swift */,
 				71E4143B2BB9EF0000408B61 /* StringGenerationsV1.swift */,
 				71E4143D2BB9F70400408B61 /* StringGenerationsV2.swift */,
+				71E414412BBA08EB00408B61 /* StringGenerationsV3.swift */,
 				71E4143F2BB9F98200408B61 /* AuxiliarFunctions.swift */,
 				71E414392BB9EC9200408B61 /* Rules.txt */,
 			);
@@ -135,6 +138,7 @@
 				71FA28A32BB8B79C002E69D5 /* main.swift in Sources */,
 				71E4143C2BB9EF0000408B61 /* StringGenerationsV1.swift in Sources */,
 				71E4143E2BB9F70400408B61 /* StringGenerationsV2.swift in Sources */,
+				71E414422BBA08EB00408B61 /* StringGenerationsV3.swift in Sources */,
 				71E4143A2BB9EC9200408B61 /* Rules.txt in Sources */,
 				71E414402BB9F98200408B61 /* AuxiliarFunctions.swift in Sources */,
 			);
