@@ -1,4 +1,4 @@
-# Lexer & Scanner Laboratory
+# Regular expressions
 
 ### Course: Formal Languages & Finite Automata
 
@@ -46,6 +46,89 @@ Examples of what must be generated:
 {RSTWXX, RRRSUWYY, ...}
 
 
+# Implementation
+
+## Version 1: Basic String Generation
+
+In the first version of my implementation, StringGenerationsV1.swift, I focused on creating strings based on predefined rules without a specific processing sequence. Here's a breakdown of the key functions and their code snippets:
+
+### First String
+
+``` swift
+func randFirstStr() -> String {
+    var finalString: String
+    let a = ["S", "T"]
+    let b = ["U", "V"]
+    let c = Int.random(in: 0..<6)
+    let d = Int.random(in: 1..<6)
+    
+    finalString = a.randomElement()! + b.randomElement()! + concatenateSymbols(symbol: "W", count: c) + concatenateSymbols(symbol: "Y", count: d) + "24"
+    
+    return finalString
+}
+```
+
+### Second String
+
+``` swift
+func randSecondStr() -> String {
+    var finalString: String
+    let a = ["M", "N"]
+    let b = Int.random(in: 0..<6)
+    let c = ["2", "3"]
+    
+    // MARK: -GENERATING SECOND STRING LO
+    finalString = "L" + a.randomElement()! + "OOO" + concatenateSymbols(symbol: "P", count: b) + "Q" + c.randomElement()!
+    
+    return finalString
+}
+```
+
+### Third String
+
+``` swift
+func randThirdStr() -> String {
+    var finalString: String
+    let a = Int.random(in: 0..<6)
+    let b = ["T", "U", "V"]
+    let c = ["X", "Y", "Z"]
+    
+    // MARK: GENERATING THIRD STRING SO
+    finalString = concatenateSymbols(symbol: "R", count: a) + "S" + b.randomElement()! + "W" + concatenateSymbols(symbol: Character(c.randomElement()!), count: 2)
+    
+    return finalString
+}
+```
+
+### Calling the Functions
+
+``` swift
+    str1 = randFirstStr()
+    str2 = randSecondStr()
+    str3 = randThirdStr()
+    
+    print("First string: " + str1)
+    print("Second string: " + str2)
+    print("Third string: " + str3)
+```
+
+### Output examples:
+
+#### Example 1:
+
+``` bash
+    First string: TVWWWWWYY24
+    Second string: LNOOOPPPQ2
+    Third string: RRSUWXX
+```
+
+#### Example 2: 
+
+``` bash
+    First string: SUWWWWWYY24
+    Second string: LNOOOPPPQ2
+    Third string: RRRSTWZZ
+```
 
 ## Conclusion
 
