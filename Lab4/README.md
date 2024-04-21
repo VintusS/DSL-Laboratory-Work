@@ -50,7 +50,7 @@ Examples of what must be generated:
 
 ## Version 1: Basic String Generation
 
-In the first version of my implementation, RegexV1.swift, I focused on creating strings based on predefined rules without a specific processing sequence. Here's a breakdown of the key functions and their code snippets:
+In the first version of my implementation, RegexV1.swift, the design was centered around generating strings that conform to predefined rules. The approach lacked a specific processing sequence, which meant that the system worked by interpreting and constructing strings directly from the rules without a clear order of operations. This approach can be beneficial for flexibility and simplicity but might also lead to inefficiencies or limitations in handling more complex patterns or sequences. Key functions were developed to parse and execute these rules, translating the abstract patterns into actual usable strings. This version likely included basic functionalities for handling operations like random selection ('|'), specified repetitions ('^n'), and optional inclusion ('?'), among others, thus providing a foundational framework for generating strings based on the defined regular expression syntax. Each function in this version played a critical role in interpreting these elements and constructing the resulting strings accordingly.
 
 ### First String
 
@@ -132,7 +132,7 @@ Third string: RRRSTWZZ
 
 ## Version 2: Enhanced String Generation with Processing Sequence
 
-The second version, RegexV2.swift, enhances the string generation process by adding a sequence of processing steps for each string. The auxiliar functions are situated in AuxiliarFunctions.swift. Here are the modified functions and their code snippets:
+In the second iteration, RegexV2.swift, I refined the string generation process by incorporating a structured sequence of processing steps for each string. This version emphasizes a more organized approach where each rule is processed in a defined order, allowing for enhanced handling of complex patterns and dependencies between different parts of the regex rules. The auxiliary functions, housed in AuxiliarFunctions.swift, support this structured processing by providing utility operations that are crucial for the main logic in RegexV2.swift. These auxiliary functions could include methods for more sophisticated pattern matching, and possibly optimizations for repetitive tasks, thereby bolstering the overall robustness and capability of the regex engine. This modular separation enhances maintainability and scalability, making it easier to extend or modify the functionality as needed.
 
 ### First String
 
@@ -296,6 +296,37 @@ Concatenating "X" 2 times: -> RRRRSVWZZ
 ------------------------------------------
 Final Result: RRRRSVWZZ
 ```
+
+## Version 3: Enhanced String Generation with User Input
+
+The primary objective was to develop a function, processString, capable of processing an input string embedded with specialized operators that modify the string based on defined rules. These operators included choices for random selection from a set of characters (e.g., a∣b∣c), random repetitions of characters (using the operators ^* for 0 to 5 times and ^+ for 1 to 5 times), exact repetitions specified by ^n, and optional inclusion of characters using the ? operator.
+
+Throughout the session, students were required to write and refine the processString function to ensure accurate identification and application of each operator. The task demanded a precise understanding of regex operations and string handling in Swift, challenging students to think critically about the sequence in which string transformations should occur. This ensured that operations like selecting one character from a set were not erroneously repeated or skipped. Extensive testing was emphasized, with students applying a variety of test cases to verify that each part of the input string was processed correctly, adhering to the randomness or exactness specified by the operators.
+
+### Output examples:
+
+#### Example 1:
+```swift
+Enter the regular expression for processing: 
+ABC?(A|B|C)^*
+Comments: 
+Chose 'B' from '(A|B|C)'
+ Repeated 'B' 5 time(s)
+-------------------------
+ Final String: ABCBBBBB
+ ```
+
+ #### Example 2:
+ ```swift
+ Enter the regular expression for processing: 
+LFA^3(A|B|C)^*
+Comments: 
+Chose 'A' from '(A|B|C)'
+ Repeated 'A' 1 time(s)
+ Repeated 'A' 3 time(s)
+-------------------------
+ Final String: LFAAAA
+ ```
 
 ## Conclusion
 

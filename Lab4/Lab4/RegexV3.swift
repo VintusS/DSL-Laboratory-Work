@@ -82,7 +82,7 @@ func RegexV3() {
             processedString = processParentheses(processedString)
             processedString = processRepetitionsAndOptionals(processedString)
 
-            return  "Comments: \n" + comments.joined(separator: "\n ") + "\n Final String: " + processedString
+            return  "Comments: \n" + comments.joined(separator: "\n ") + "\n-------------------------" + "\n Final String: " + processedString
         }
 
         let output = processString(input)
