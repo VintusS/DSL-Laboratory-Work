@@ -18,17 +18,17 @@ This project aims to implement a simple lexer to understand the fundamentals of 
 
 ## Implementation
 
-The lexer is implemented in Swift, providing a concise and effective demonstration of lexical analysis. The core functionality includes recognizing identifiers, numbers, operators, and assigning appropriate token types to different segments of the input string.
+The lexer implementation in Swift showcases an efficient approach to lexical analysis, critical for parsing and interpreting code. The primary objective of the lexer is to convert a sequence of characters into a stream of tokens that represent syntactic meaning, such as identifiers, numbers, and operators. Each token is classified according to type, which is crucial for the subsequent phases of parsing and compilation.
 
 ### Key Components
 
-- `TokenType`: Enum to define various types of tokens like identifiers, numbers, and operators.
-- `Token`: Struct to represent individual tokens with a type and value.
-- `Lexer`: Class responsible for the lexical analysis, capable of tokenizing an input string.
+- `TokenType`: This is an enumeration that defines the possible types of tokens. It includes categories like identifiers, numbers, operators, and whitespace, allowing the lexer to categorize parts of the string based on their role in the syntax of the language.
+- `Token`: A struct that encapsulates a token in the lexical analysis process. Each token has a type, derived from the TokenType enum, and a value, which is the actual string excerpt representing the token in the source code.
+- `Lexer`: A class responsible for the core functionality of lexical analysis. It takes an input string and processes it to extract tokens by recognizing patterns that match different types of syntax elements (like numbers or identifiers).
 
 ## Usage
 
-To use the lexer, initialize it with a string, and then call the `tokenize` method to produce a stream of tokens.
+The lexer is designed to be user-friendly and easy to integrate into larger applications. Here’s how you can utilize the lexer:
 
 ```swift
 print("Enter your code line:", terminator: " ")
@@ -56,7 +56,7 @@ number: '34'
 
 ## Conclusion
 
-This lexer project serves as a practical introduction to lexical analysis, a fundamental component of compilers and interpreters. By implementing a basic lexer, students gain hands-on experience with the process of tokenizing strings, understanding the intricacies of lexical tokens, and the importance of precise syntax analysis in programming language design. This project not only reinforces theoretical concepts learned in the study of formal languages and finite automata but also provides a foundational tool for further exploration in the field of compiler construction.
+Through this lexer project, students encounter the foundational aspects of compiler technology, specifically lexical analysis. The project not only reinforces theoretical concepts from the study of formal languages and automata but also serves as a practical tool for further explorations in compiler construction and language design. The implementation highlights the meticulous nature of lexical token identification and its significance in the broader context of software development and programming language theory. This hands-on experience lays the groundwork for more advanced studies in compiler construction and language processing.
 
 
 ## References
