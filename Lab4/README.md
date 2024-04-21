@@ -50,7 +50,7 @@ Examples of what must be generated:
 
 ## Version 1: Basic String Generation
 
-In the first version of my implementation, StringGenerationsV1.swift, I focused on creating strings based on predefined rules without a specific processing sequence. Here's a breakdown of the key functions and their code snippets:
+In the first version of my implementation, RegexV1.swift, I focused on creating strings based on predefined rules without a specific processing sequence. Here's a breakdown of the key functions and their code snippets:
 
 ### First String
 
@@ -132,7 +132,7 @@ Third string: RRRSTWZZ
 
 ## Version 2: Enhanced String Generation with Processing Sequence
 
-The second version, StringGenerationsV2.swift, enhances the string generation process by adding a sequence of processing steps for each string. The auxiliar functions are situated in AuxiliarFunctions.swift. Here are the modified functions and their code snippets:
+The second version, RegexV2.swift, enhances the string generation process by adding a sequence of processing steps for each string. The auxiliar functions are situated in AuxiliarFunctions.swift. Here are the modified functions and their code snippets:
 
 ### First String
 
