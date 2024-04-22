@@ -7,5 +7,13 @@
 
 import Foundation
 
+//Initial grammar
 let grammar = Grammar()
-let (P1, P2, P3, P4, P5) = grammar.returnProductions()
+let productions = grammar.returnProductions()
+
+//Productions after processing of the unit tests
+print("Productions after processing:")
+for (index, production) in productions.enumerated() {
+    print("Step \(index + 1):")
+    print(production)
+}
