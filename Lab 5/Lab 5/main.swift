@@ -7,5 +7,5 @@
 
 import Foundation
 
-print("Hello, World!")
-
+let grammar = Grammar()
+let (P1, P2, P3, P4, P5) = grammar.returnProductions()
