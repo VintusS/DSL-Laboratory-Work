@@ -21,48 +21,39 @@ class Lexer {
         var failedOn = ""
         var validTokens: [String] = []
 
-        for char in equation {
+        var buffer = ""
+        var lastCategory: TokenType?
+
+        for char in equation + " " { 
             let symbol = String(char)
-            if data[.openParenthesis]?.contains(where: { NSPredicate(format:"SELF MATCHES %@", $0).evaluate(with: symbol) }) == true {
-                seqParenthesis.append(symbol)
-            } else if data[.closeParenthesis]?.contains(where: { NSPredicate(format:"SELF MATCHES %@", $0).evaluate(with: symbol) }) == true {
-                guard !seqParenthesis.isEmpty else {
-                    print("ERROR: Extra closing parenthesis found.")
-                    print("Failed on symbol \(failedOn)")
-                    return nil
+
+            let currentCategory = data.first { (_, patterns) in
+                patterns.contains { NSPredicate(format:"SELF MATCHES %@", $0).evaluate(with: symbol) }
+            }?.key
+
+            if let lastCategory = lastCategory, currentCategory == lastCategory {
+                buffer += symbol
+            } else {
+                if !buffer.isEmpty {
+
+                    validTokens.append(buffer)
+                    categoryMapping.append(lastCategory!)
+                    buffer = ""
                 }
 
-                let lastOpen = seqParenthesis.removeLast()
-                if (symbol == ")" && lastOpen != "(") || (symbol == "]" && lastOpen != "[") {
-                    print("ERROR: Mismatched closing parenthesis found.")
-                    print("Failed on symbol \(failedOn)")
-                    return nil
+                if currentCategory != nil {
+                    buffer = symbol
+                    lastCategory = currentCategory
                 }
             }
+        }
 
-            var foundCategory: TokenType?
-            for (category, patterns) in data {
-                if patterns.contains(where: { NSPredicate(format:"SELF MATCHES %@", $0).evaluate(with: symbol) }) {
-                    foundCategory = category
-                    break
-                }
-            }
-            
-            guard let currentCategory = foundCategory else {
-                print("ERROR: Symbol '\(symbol)' does not belong to any known category.")
-                print("Failed on symbol \(failedOn)")
+        for i in 1..<categoryMapping.count {
+            if !(transitions[categoryMapping[i - 1]]?.contains(categoryMapping[i]) ?? false) {
+                print("ERROR: Transition not allowed from '\(categoryMapping[i - 1])' to '\(categoryMapping[i])'.")
+                print("Failed on symbol \(validTokens[i - 1])")
                 return nil
             }
-
-            if !(transitions[categoryMapping.last!]?.contains(currentCategory) ?? false) {
-                print("ERROR: Transition not allowed from '\(categoryMapping.last!)' to '\(currentCategory)'.")
-                print("Failed on symbol \(failedOn)")
-                return nil
-            }
-
-            categoryMapping.append(currentCategory)
-            validTokens.append(symbol)
-            failedOn += symbol
         }
 
         if !seqParenthesis.isEmpty {
@@ -70,7 +61,7 @@ class Lexer {
             print("Failed on symbol \(failedOn)")
             return nil
         }
-        
+
         return (categoryMapping, validTokens)
     }
 }
