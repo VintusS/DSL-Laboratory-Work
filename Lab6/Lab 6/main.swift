@@ -25,6 +25,7 @@ let transitions: [TokenType: [TokenType]] = [
 ]
 
 // Test Parser
+print("Enter your equation: ", terminator: "")
 if let testEquation = readLine() {
     let lexer = Lexer(equation: testEquation)
     if let (categoryMapping, validTokens) = lexer.lexer() {
