@@ -97,11 +97,12 @@ class Grammar {
 
     func returnProductions() -> ([[String: [String]]]) {
         print("Initial Grammar:\n\(P)")
-        let P1 = removeEpsilon()
-        let P2 = eliminateUnitProductions()
-        let P3 = eliminateInaccessibleSymbols()
-        let P4 = removeNonproductive()
-        let P5 = chomskyNormalForm()
-        return [P1, P2, P3, P4, P5]
+        var P1 = removeEpsilon()
+        P1 = eliminateUnitProductions()
+        P1 = eliminateInaccessibleSymbols()
+        P1 = removeNonproductive()
+        P1 = chomskyNormalForm()
+        P1 = removeEpsilon()
+        return [P1]
     }
 }
