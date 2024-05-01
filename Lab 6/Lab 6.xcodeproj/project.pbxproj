@@ -10,6 +10,8 @@
 		714BA8B82BE251B500D00926 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714BA8B72BE251B500D00926 /* main.swift */; };
 		714BA8C02BE2553C00D00926 /* Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714BA8BF2BE2553C00D00926 /* Lexer.swift */; };
 		714BA8C22BE2555A00D00926 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714BA8C12BE2555A00D00926 /* Parser.swift */; };
+		714BA8C42BE255A800D00926 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714BA8C32BE255A800D00926 /* Node.swift */; };
+		714BA8C62BE255D900D00926 /* TokenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714BA8C52BE255D900D00926 /* TokenType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +31,8 @@
 		714BA8B72BE251B500D00926 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		714BA8BF2BE2553C00D00926 /* Lexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lexer.swift; sourceTree = "<group>"; };
 		714BA8C12BE2555A00D00926 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		714BA8C32BE255A800D00926 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		714BA8C52BE255D900D00926 /* TokenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 			isa = PBXGroup;
 			children = (
 				714BA8B72BE251B500D00926 /* main.swift */,
+				714BA8C52BE255D900D00926 /* TokenType.swift */,
+				714BA8C32BE255A800D00926 /* Node.swift */,
 				714BA8BF2BE2553C00D00926 /* Lexer.swift */,
 				714BA8C12BE2555A00D00926 /* Parser.swift */,
 			);
@@ -129,6 +135,8 @@
 				714BA8C02BE2553C00D00926 /* Lexer.swift in Sources */,
 				714BA8B82BE251B500D00926 /* main.swift in Sources */,
 				714BA8C22BE2555A00D00926 /* Parser.swift in Sources */,
+				714BA8C42BE255A800D00926 /* Node.swift in Sources */,
+				714BA8C62BE255D900D00926 /* TokenType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
