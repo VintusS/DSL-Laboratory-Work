@@ -15,53 +15,39 @@ class Lexer {
     }
 
     func lexer() -> ([TokenType], [String])? {
-        equation = equation.replacingOccurrences(of: " ", with: "")
-        var seqParenthesis: [String] = []
-        var categoryMapping: [TokenType] = [.start]
-        var failedOn = ""
-        var validTokens: [String] = []
-
+        let cleanedEquation = equation.replacingOccurrences(of: " ", with: "")
+        var tokens: [String] = []
+        var types: [TokenType] = [.start]
         var buffer = ""
-        var lastCategory: TokenType?
+        var lastType: TokenType?
 
-        for char in equation + " " { 
+        for char in cleanedEquation {
             let symbol = String(char)
-
-            let currentCategory = data.first { (_, patterns) in
-                patterns.contains { NSPredicate(format:"SELF MATCHES %@", $0).evaluate(with: symbol) }
-            }?.key
-
-            if let lastCategory = lastCategory, currentCategory == lastCategory {
-                buffer += symbol
-            } else {
-                if !buffer.isEmpty {
-
-                    validTokens.append(buffer)
-                    categoryMapping.append(lastCategory!)
-                    buffer = ""
-                }
-
-                if currentCategory != nil {
+            if let type = determineTokenType(for: symbol) {
+                if let last = lastType, last == type {
+                    buffer += symbol
+                } else {
+                    if !buffer.isEmpty {
+                        tokens.append(buffer)
+                        types.append(lastType!)
+                    }
                     buffer = symbol
-                    lastCategory = currentCategory
+                    lastType = type
                 }
             }
         }
 
-        for i in 1..<categoryMapping.count {
-            if !(transitions[categoryMapping[i - 1]]?.contains(categoryMapping[i]) ?? false) {
-                print("ERROR: Transition not allowed from '\(categoryMapping[i - 1])' to '\(categoryMapping[i])'.")
-                print("Failed on symbol \(validTokens[i - 1])")
-                return nil
-            }
+        if !buffer.isEmpty {
+            tokens.append(buffer)
+            types.append(lastType!)
         }
 
-        if !seqParenthesis.isEmpty {
-            print("ERROR: Not all parentheses were closed.")
-            print("Failed on symbol \(failedOn)")
-            return nil
-        }
+        return (types, tokens)
+    }
 
-        return (categoryMapping, validTokens)
+    private func determineTokenType(for symbol: String) -> TokenType? {
+        return TokenType.allCases.first { type in
+            data[type]?.contains(where: { NSPredicate(format: "SELF MATCHES %@", $0).evaluate(with: symbol) }) == true
+        }
     }
 }

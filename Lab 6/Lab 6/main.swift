@@ -7,19 +7,21 @@
 
 import Foundation
 
-let transitions: [TokenType: [TokenType]] = [
-    .openParenthesis: [.numbers, .openParenthesis],
-    .mathOperation: [.numbers, .openParenthesis],
-    .closeParenthesis: [.mathOperation, .closeParenthesis],
-    .numbers: [.numbers, .closeParenthesis, .mathOperation],
-    .start: [.openParenthesis, .numbers]
+let data: [TokenType: [String]] = [
+    .openParenthesis: ["\\("],
+    .closeParenthesis: ["\\)"],
+    .mathOperation: ["[+\\-*/%^]"],
+    .numbers: ["\\d+"],  
+    .unknowns: ["[a-zA-Z]+"]
 ]
 
-let data: [TokenType: [String]] = [
-    .openParenthesis: ["\\(", "\\["],
-    .closeParenthesis: ["\\)", "\\]"],
-    .mathOperation: ["[+\\-*/%^]"],
-    .numbers: ["\\d+"]
+let transitions: [TokenType: [TokenType]] = [
+    .openParenthesis: [.numbers, .unknowns, .openParenthesis],
+    .mathOperation: [.numbers, .unknowns, .openParenthesis],
+    .closeParenthesis: [.mathOperation, .closeParenthesis],
+    .numbers: [.mathOperation, .closeParenthesis],
+    .unknowns: [.mathOperation, .closeParenthesis],
+    .start: [.openParenthesis, .numbers, .unknowns]
 ]
 
 // Test Parser

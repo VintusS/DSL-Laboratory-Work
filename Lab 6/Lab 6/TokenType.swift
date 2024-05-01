@@ -8,7 +8,7 @@
 import Foundation
 
 enum TokenType: CaseIterable, CustomStringConvertible {
-    case openParenthesis, closeParenthesis, mathOperation, numbers, start
+    case openParenthesis, closeParenthesis, mathOperation, numbers, unknowns, start
 
     var description: String {
         switch self {
@@ -16,6 +16,7 @@ enum TokenType: CaseIterable, CustomStringConvertible {
         case .closeParenthesis: return "closeParenthesis"
         case .mathOperation: return "mathOperation"
         case .numbers: return "numbers"
+        case .unknowns: return "unknowns"
         case .start: return "start"
         }
     }
